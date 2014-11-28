@@ -19,9 +19,7 @@
   "scripts": {
     "start": "node server.js",
     "watch": "watchify -o public/bundle.js -v -d src/js/**.js",
-    "build": "browserify src/js/**.js > public/bundle.js",
-    "build:production": "npm run build && npm run uglify",
-    "uglify": "uglifyjs --screw-ie8 public/bundle.js -m -d > public/bundle.min.js"
+    "build": "browserify src/js/**.js > public/app.js"
   },
   "browserify": {
     "transform": [
