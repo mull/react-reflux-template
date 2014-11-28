@@ -2,24 +2,25 @@
   "name": "insert-app-name",
   "version": "0.0.1",
   "description": "Insert app description",
-  "main": "src/js/app.js",
+  "main": "server.js",
   "dependencies": {
     "flux": "^2.0.0",
     "react": "^0.12.0",
-    "underscore": "^1.7.0"
+    "underscore": "^1.7.0",
+    "express": "^4.10.4"
   },
   "devDependencies": {
     "browserify": "^6.3.3",
     "reactify": "^0.15",
     "reload": "~0.1.0",
-    "watchify": "~2.1.0",
-    "uglify-js": "~2.4.15"
+    "uglify-js": "~2.4.15",
+    "watchify": "~2.1.0"
   },
   "scripts": {
+    "start": "node server.js",
     "watch": "watchify -o public/bundle.js -v -d src/js/**.js",
     "build": "browserify src/js/**.js > public/bundle.js",
     "build:production": "npm run build && npm run uglify",
-
     "uglify": "uglifyjs --screw-ie8 public/bundle.js -m -d > public/bundle.min.js"
   },
   "browserify": {
