@@ -4,6 +4,13 @@ A simple, work in progress, template for starting of a ReactJS + reflux project 
 2. Clone & go: Just delete the example/reference code and you're ready to build.
 3. SASS instead of LESS. SASS syntax is just too beautiful.
 
+## Get started
+For the JS stuff you need to have node & npm installed. All you should need to do from there is run `npm install` and you're ready to go.
+
+SASS uses a Ruby gem to transform the SASS code into CSS. I recommend using rvm/rbenv or a similar tool to avoid having to install gems globally (which requires root privileges.) Once you're set up all you need is a `bundle install` and you should be ready to go.
+
+If `watch` or `build` fails below, try running either the `:js` or `:css` part and see which one fails. Open an issue if you believe it's an error on my part.
+
 ## How to use
 Use either `watch:js`, `watch:css` or `watch` to automatically build your changes as you make changes to your code. `watch` combines the two.
 
