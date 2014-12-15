@@ -4,24 +4,29 @@
   "description": "Insert app description",
   "main": "server.js",
   "dependencies": {
-    "flux": "^2.0.0",
-    "react": "^0.12.0",
-    "underscore": "^1.7.0",
     "express": "^4.10.4",
-    "less": "~2.1.1"
+    "react": "^0.12.0",
+    "react-router": "^0.11.4",
+    "reactfire": "^0.4.0",
+    "reflux": "^0.2.1",
+    "underscore": "^1.7.0"
   },
   "devDependencies": {
     "browserify": "^6.3.3",
+    "localStorage": "^1.0.3",
     "reactify": "^0.15",
     "reload": "~0.1.0",
     "uglify-js": "~2.4.15",
-    "watchify": "~2.1.0"
+    "watchify": "~2.1.0",
+    "xmlhttprequest": "^1.6.0"
   },
   "scripts": {
     "start": "node server.js",
-    "watch": "watchify -o public/bundle.js -v -d src/js/**.js",
-    "build:js": "browserify src/js/**.js > public/app.js",
-    "build:css": "less src/less/app.less > public/app.css",
+    "watch:js": "watchify -o public/assets/app.js -v -d src/js/**.js*",
+    "watch:css": "sass --watch src/css/app.sass:public/assets/app.css",
+    "watch": "npm run watch:js & npm run watch:css",
+    "build:js": "browserify src/js/**.js* > public/assets/app.js",
+    "build:css": "sass src/css/app.sass > public/assets/app.css",
     "build": "npm run build:js && npm run build:css"
   },
   "browserify": {

@@ -1,3 +1,5 @@
-var example = require('./example.js');
+var React = require('react');
 
-example.doStuff();
+var Hello = require('./components/hello.jsx');
+
+React.render(<Hello />, document.body);

@@ -1,13 +1,31 @@
+console.log("Starting server");
+
 var express = require('express')
-var app = express();
+    app = express(),
+    port = process.env.PORT || 4000;
 
-app.set('port', (process.env.PORT || 4000))
-app.use(express.static(__dirname + '/public'))
 
-app.get('/', function(request, response) {
-  response.send('Hello World!')
-})
+var serveAsset = function(req, res, next) {
+    if (req.method !== 'GET') {
+        next();
+        return;
+    }
 
-app.listen(app.get('port'), function() {
-  console.log("Serving at http://localhost:" + app.get('port'))
-})
+    var file = req.path.split('/assets/');
+    file.shift();
+    file = file.join('');
+
+    res.sendFile(__dirname + '/public/assets/' + file);
+};
+
+
+app.get('/*', function(req, res, next) {
+    if (req.path.match(/assets/)) {
+        return serveAsset(req, res, next);
+    }
+
+    res.sendFile(__dirname + '/public/index.html');
+});
+
+app.listen(port);
+console.log("Now listening at http://localhost:" + port);
