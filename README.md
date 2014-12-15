@@ -1,4 +1,8 @@
-A simple, work in progress, template for starting of a ReactJS + Flux project with one clear goal: *no awful grunt or bower.*
+A simple, work in progress, template for starting of a ReactJS + reflux project with these goals:
+
+1. No bower, gulp or other unnecessary tool that only adds complexity.
+2. Clone & go: Just delete the example/reference code and you're ready to build.
+3. SASS instead of LESS. SASS syntax is just too beautiful.
 
 ## How to use
 Use either `watch:js`, `watch:css` or `watch` to automatically build your changes as you make changes to your code. `watch` combines the two.
